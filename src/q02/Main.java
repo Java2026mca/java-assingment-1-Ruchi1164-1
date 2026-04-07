@@ -11,22 +11,26 @@
         // 1 4 6 4 1
 import java.util.Scanner;
 
-public class PascalTriangle {
+public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();  // Number of rows
-        sc.close();
+        int n = sc.nextInt();
 
         for (int i = 0; i < n; i++) {
-            int val = 1;  // First element of each row is 1
+            int num = 1;
+
             for (int j = 0; j <= i; j++) {
-                System.out.print(val);
+                System.out.print(num);
+
                 if (j < i) {
-                    System.out.print(" ");  // Separate values by single space
+                    System.out.print(" ");
                 }
-                val = val * (i - j) / (j + 1);  // Compute next value in row
+
+                num = num * (i - j) / (j + 1);
             }
-            System.out.println();  // Move to next row
+            System.out.println();
         }
+
+        sc.close();
     }
 }

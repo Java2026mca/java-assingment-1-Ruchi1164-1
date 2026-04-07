@@ -14,7 +14,6 @@
         //   * *
         //    *
 import java.util.Scanner;
-
 public class HollowDiamondPattern {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

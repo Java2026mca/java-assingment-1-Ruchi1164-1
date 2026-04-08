@@ -1,17 +1,4 @@
-
-
-        // TODO: Fill an N×N matrix in clockwise spiral order starting from 1
-        //       Print each row with values separated by single space
-        //       Then print: "Diagonal: X" where X = sum of primary diagonal (top-left to bottom-right)
-        //
-        // Input: 3
-        // Output:
-        // 1 2 3
-        // 8 9 4
-        // 7 6 5
-        // Diagonal: 15
-
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -24,22 +11,21 @@ public class Main {
         int left = 0, right = n - 1;
         int num = 1;
 
-        // Spiral fill
+        
         while (top <= bottom && left <= right) {
 
-            // Top row
             for (int i = left; i <= right; i++) {
                 arr[top][i] = num++;
             }
             top++;
 
-            // Right column
+          
             for (int i = top; i <= bottom; i++) {
                 arr[i][right] = num++;
             }
             right--;
 
-            // Bottom row
+           
             if (top <= bottom) {
                 for (int i = right; i >= left; i--) {
                     arr[bottom][i] = num++;
@@ -47,7 +33,7 @@ public class Main {
                 bottom--;
             }
 
-            // Left column
+           
             if (left <= right) {
                 for (int i = bottom; i >= top; i--) {
                     arr[i][left] = num++;
@@ -56,7 +42,7 @@ public class Main {
             }
         }
 
-        // Print matrix
+       
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 System.out.print(arr[i][j]);
@@ -65,14 +51,12 @@ public class Main {
             System.out.println();
         }
 
-        // Diagonal sum
-        int sum = 0;
+        
+        int diagonalSum = 0;
         for (int i = 0; i < n; i++) {
-            sum += arr[i][i];
+            diagonalSum += arr[i][i];
         }
 
-        System.out.println("Diagonal: " + sum);
-
-        sc.close();
+        System.out.println("Diagonal: " + diagonalSum);
     }
-             }
+}
